@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'csc490-lsm-rest-api'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0FDAA18725364A39BC39D8DA5A503B3F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0069729FD3C24569A545EE3E56BDDA35 }}
