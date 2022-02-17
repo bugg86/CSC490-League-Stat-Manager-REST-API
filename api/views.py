@@ -6,9 +6,13 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from rest_framework import status
 
-from .serializers import ItemsSerializer
-from .models import Items
+from .serializers import ItemsSerializer, QueueSerializer
+from .models import Items, Queues
 
 class ItemsViewset(viewsets.ModelViewSet):
     queryset = Items.objects.all().order_by('itemid')
-    serializer_class = ItemsSerializer
+    serializer = ItemsSerializer
+
+class QueueViewset(viewsets.ModelViewSet) :
+    queryset = Queues.objects().all().order_by('queueid')
+    serializer = QueueSerializer
