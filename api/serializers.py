@@ -1,4 +1,4 @@
-from .models import Items, Queues, Runes, Runestyles
+from .models import Items, Queues, Runes, Runestyles, Leagues
 from rest_framework import serializers
 
 class ItemsSerializer(serializers.ModelSerializer):
@@ -20,3 +20,8 @@ class RuneStyleSerializer(serializers.ModelSerializer) :
     class Meta:
         model = Runestyles
         fields = ('styleid', 'name')
+
+class LeagueSerializer(serializers.ModelSerializer) :
+    class Meta:
+        model = Leagues
+        fields = ('leagueid', 'queuetype', 'tier', 'rank', 'summonerid', 'summonername', 'leaguepoints', 'wins', 'losses', 'veteran', 'inactive', 'freshblood', 'hotstreak')
