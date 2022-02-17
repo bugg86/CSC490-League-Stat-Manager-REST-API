@@ -1,4 +1,4 @@
-from .models import Items, Queues, Runes, Runestyles, Leagues, Maps
+from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery
 from rest_framework import serializers
 
 class ItemsSerializer(serializers.ModelSerializer):
@@ -30,3 +30,13 @@ class MapSerializer(serializers.ModelSerializer) :
     class Meta:
         model = Maps
         fields = ('mapid', 'mapname')
+
+class ChampionSerializer(serializers.ModelSerializer) :
+    class Meta:
+        model = Champions
+        fields = ('championid', 'name')
+
+class ChampionMasterySerializer(serializers.ModelSerializer) :
+    class Meta :
+        model = Championmastery
+        fields = ('summonerid', 'championid', 'championlevel', 'championpoints', 'championpointsuntilnextlevel', 'chestgranted', 'tokensearned')
