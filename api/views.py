@@ -14,5 +14,5 @@ class ItemsViewset(viewsets.ModelViewSet):
     serializer = ItemsSerializer
 
 class QueueViewset(viewsets.ModelViewSet) :
-    queryset = Queues.objects().all().order_by('queueid')
+    queryset = Queues.objects.all().order_by('queueid')
     serializer = QueueSerializer

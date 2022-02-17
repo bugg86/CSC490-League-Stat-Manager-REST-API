@@ -8,5 +8,5 @@ class ItemsSerializer(serializers.ModelSerializer):
 
 class QueueSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Items
+        model = Queues
         fields = ('queueid', 'map', 'description')
