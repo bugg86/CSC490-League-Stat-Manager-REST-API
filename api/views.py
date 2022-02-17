@@ -6,8 +6,8 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from rest_framework import status
 
-from .serializers import ItemsSerializer, QueueSerializer, RuneSerializer, RuneStyleSerializer, LeagueSerializer
-from .models import Items, Queues, Runes, Runestyles, Leagues
+from .serializers import ItemsSerializer, QueueSerializer, RuneSerializer, RuneStyleSerializer, LeagueSerializer, MapSerializer
+from .models import Items, Queues, Runes, Runestyles, Leagues, Maps
 
 class ItemsViewset(viewsets.ModelViewSet):
     queryset = Items.objects.all().order_by('itemid')
@@ -28,3 +28,7 @@ class RunestyleViewset(viewsets.ModelViewSet) :
 class LeagueViewset(viewsets.ModelViewSet) :
     queryset = Leagues.objects.all().order_by('leagueid')
     serializer_class = LeagueSerializer
+
+class MapViewset(viewsets.ModelViewSet) :
+    queryset = Maps.objects.all().order_by('mapid')
+    serializer_class = MapSerializer
