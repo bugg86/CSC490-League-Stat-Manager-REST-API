@@ -6,8 +6,8 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from rest_framework import status
 
-from .serializers import ItemsSerializer, QueueSerializer, RuneSerializer, RuneStyleSerializer, LeagueSerializer, MapSerializer, ChampionSerializer, ChampionMasterySerializer
-from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery
+from .serializers import ItemsSerializer, QueueSerializer, RuneSerializer, RuneStyleSerializer, LeagueSerializer, MapSerializer, ChampionSerializer, ChampionMasterySerializer, SummonerSpellSerializer
+from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells
 
 class ItemsViewset(viewsets.ModelViewSet):
     queryset = Items.objects.all().order_by('itemid')
@@ -40,3 +40,7 @@ class ChampionViewset(viewsets.ModelViewSet) :
 class ChampionMasteryViewset(viewsets.ModelViewSet) :
     queryset = Championmastery.objects.all().order_by('summonerid')
     serializer_class = ChampionMasterySerializer
+
+class SummonerSpellViewset(viewsets.ModelViewSet) :
+    queryset = Summonerspells.objects.all().order_by('spellkey')
+    serializer_class = SummonerSpellSerializer
