@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8zw@5o=^vym(+ho0b04bb^irk7nl8_ditpvko7!-7s9cr@-8c=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['csc490-lsm-rest-api.azurewebsites.net', 'https://csc490-lsm-rest-api.net', 'https://csc490-lsm-rest-api.azurewebsites.net']
+ALLOWED_HOSTS = ['csc490-lsm-rest-api.azurewebsites.net', 'https://csc490-lsm-rest-api.net', 'https://csc490-lsm-rest-api.azurewebsites.net', 'csc490-lsm-rest-api.net']
 # ALLOWED_HOSTS = []
 
 
