@@ -1,4 +1,4 @@
-from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells
+from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells, Summoners
 from rest_framework import serializers
 
 class ItemsSerializer(serializers.ModelSerializer):
@@ -45,3 +45,8 @@ class SummonerSpellSerializer(serializers.ModelSerializer) :
     class Meta :
         model = Summonerspells
         fields = ('spellkey', 'spellid', 'name', 'cooldown')
+
+class SummonerSerializer(serializers.ModelSerializer) :
+    class Meta :
+        model = Summoners
+        fields = ('id', 'accountid', 'puuid', 'name', 'profileiconid', 'revisiondate', 'summonerlevel')
