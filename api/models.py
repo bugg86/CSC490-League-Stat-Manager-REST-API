@@ -315,6 +315,7 @@ class Matches(models.Model):
     mapid = models.ForeignKey(Maps, models.DO_NOTHING, db_column='mapId')  # Field name made lowercase.
     queueid = models.ForeignKey('Queues', models.DO_NOTHING, db_column='queueId')  # Field name made lowercase.
     platformid = models.CharField(db_column='platformId', max_length=100)  # Field name made lowercase.
+    gameversion = models.CharField(db_column='gameVersion', max_length=100)  # Field name made lowercase.
 
     class Meta:
         managed = False
