@@ -306,22 +306,6 @@ class Matchparticipants(models.Model):
         db_table = 'matchParticipants'
 
 
-class Matches(models.Model):
-    matchid = models.CharField(db_column='matchId', primary_key=True, max_length=100)  # Field name made lowercase.
-    gamemode = models.CharField(db_column='gameMode', max_length=100)  # Field name made lowercase.
-    gameduration = models.IntegerField(db_column='gameDuration')  # Field name made lowercase.
-    gamename = models.CharField(db_column='gameName', max_length=100)  # Field name made lowercase.
-    gametype = models.CharField(db_column='gameType', max_length=100)  # Field name made lowercase.
-    mapid = models.ForeignKey(Maps, models.DO_NOTHING, db_column='mapId')  # Field name made lowercase.
-    queueid = models.ForeignKey('Queues', models.DO_NOTHING, db_column='queueId')  # Field name made lowercase.
-    platformid = models.CharField(db_column='platformId', max_length=100)  # Field name made lowercase.
-    gameversion = models.CharField(db_column='gameVersion', max_length=100)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'matches'
-
-
 class Queues(models.Model):
     queueid = models.IntegerField(db_column='queueId', primary_key=True)  # Field name made lowercase.
     map = models.CharField(max_length=100)
@@ -330,6 +314,22 @@ class Queues(models.Model):
     class Meta:
         managed = False
         db_table = 'queues'
+
+
+class Matches(models.Model):
+    matchid = models.CharField(db_column='matchId', primary_key=True, max_length=100)  # Field name made lowercase.
+    gamemode = models.CharField(db_column='gameMode', max_length=100)  # Field name made lowercase.
+    gameduration = models.IntegerField(db_column='gameDuration')  # Field name made lowercase.
+    gamename = models.CharField(db_column='gameName', max_length=100)  # Field name made lowercase.
+    gametype = models.CharField(db_column='gameType', max_length=100)  # Field name made lowercase.
+    mapid = models.ForeignKey(Maps, models.DO_NOTHING, db_column='mapId')  # Field name made lowercase.
+    queueid = models.ForeignKey(Queues, models.DO_NOTHING, db_column='queueId')  # Field name made lowercase.
+    platformid = models.CharField(db_column='platformId', max_length=100)  # Field name made lowercase.
+    gameversion = models.CharField(db_column='gameVersion', max_length=100)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'matches'
 
 
 class Runestyles(models.Model):
