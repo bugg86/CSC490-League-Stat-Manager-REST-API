@@ -54,4 +54,4 @@ class SummonerSerializer(serializers.ModelSerializer) :
 class MatchSerializer(serializers.ModelSerializer) : 
     class Meta :
         model = Matches
-        fields = ('matchid', 'gamemode', 'gameduration', 'gamename', 'gametype', 'mapid', 'queueid', 'platformid', 'gameVersion')
+        fields = ('matchid', 'gamemode', 'gameduration', 'gamename', 'gametype', 'mapid', 'queueid', 'platformid', 'gameversion')
