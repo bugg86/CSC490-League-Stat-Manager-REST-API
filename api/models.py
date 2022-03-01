@@ -94,7 +94,37 @@ class Championmastery(models.Model):
 
 class Champions(models.Model):
     championid = models.IntegerField(db_column='championId', primary_key=True)  # Field name made lowercase.
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, blank=True, null=True)
+    version = models.CharField(max_length=100, blank=True, null=True)
+    title = models.CharField(max_length=100, blank=True, null=True)
+    blurb = models.CharField(max_length=1000, blank=True, null=True)
+    info_attack = models.IntegerField(db_column='info_attack', blank=True, null=True)
+    info_defense = models.IntegerField(db_column='info_defense', blank=True, null=True)
+    info_magic = models.IntegerField(db_column='info_magic', blank=True, null=True)
+    info_difficulty = models.IntegerField(db_column='info_difficulty', blank=True, null=True)
+    tag1 = models.CharField(max_length=1000, blank=True, null=True)
+    tag2 = models.CharField(max_length=1000, blank=True, null=True)
+    partype = models.CharField(max_length=1000, blank=True, null=True)
+    stats_hp = models.IntegerField(db_column='stats_hp', blank=True, null=True)
+    stats_hpperlevel = models.IntegerField(db_column='stats_hpperlevel', blank=True, null=True)
+    stats_mp = models.IntegerField(db_column='stats_mp', blank=True, null=True)
+    stats_mpperlevel = models.IntegerField(db_column='stats_mpperlevel', blank=True, null=True)
+    stats_movespeed = models.IntegerField(db_column='stats_movespeed', blank=True, null=True)
+    stats_armor = models.IntegerField(db_column='stats_armor', blank=True, null=True)
+    stats_armorperlevel = models.IntegerField(db_column='stats_armorperlevel', blank=True, null=True)
+    stats_spellblock = models.IntegerField(db_column='stats_spellblock', blank=True, null=True)
+    stats_spellblockperlevel = models.IntegerField(db_column='stats_spellblockperlevel', blank=True, null=True)
+    stats_attackrange = models.IntegerField(db_column='stats_attackrange', blank=True, null=True)
+    stats_hpregen = models.IntegerField(db_column='stats_hpregen', blank=True, null=True)
+    stats_hpregenperlevel = models.IntegerField(db_column='stats_hpregenperlevel', blank=True, null=True)
+    stats_mpregen = models.IntegerField(db_column='stats_mpregen', blank=True, null=True)
+    stats_mpregenperlevel = models.IntegerField(db_column='stats_mpregenperlevel', blank=True, null=True)
+    stats_crit = models.IntegerField(db_column='stats_crit', blank=True, null=True)
+    stats_critperlevel = models.IntegerField(db_column='stats_critperlevel', blank=True, null=True)
+    stats_attackdamage = models.IntegerField(db_column='stats_attackdamage', blank=True, null=True)
+    stats_attackdamageperlevel = models.IntegerField(db_column='stats_attackdamageperlevel', blank=True, null=True)
+    stats_attackspeedperlevel = models.IntegerField(db_column='stats_attackspeedperlevel', blank=True, null=True)
+    stats_attackspeed = models.IntegerField(db_column='stats_attackspeed', blank=True, null=True)
 
     class Meta:
         managed = False
