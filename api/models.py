@@ -97,7 +97,7 @@ class Champions(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     version = models.CharField(max_length=100, blank=True, null=True)
     title = models.CharField(max_length=100, blank=True, null=True)
-    blurb = models.CharField(max_length=255, blank=True, null=True)
+    blurb = models.CharField(max_length=1000, blank=True, null=True)
     info_attack = models.FloatField(db_column='info_attack', blank=True, null=True)
     info_defense = models.FloatField(db_column='info_defense', blank=True, null=True)
     info_magic = models.FloatField(db_column='info_magic', blank=True, null=True)
