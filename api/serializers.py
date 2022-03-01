@@ -44,7 +44,7 @@ class ChampionMasterySerializer(serializers.ModelSerializer) :
 class SummonerSpellSerializer(serializers.ModelSerializer) :
     class Meta :
         model = Summonerspells
-        fields = ('spellkey', 'spellid', 'name', 'cooldown')
+        fields = ('spellkey', 'spellid', 'name', 'cooldown', 'description')
 
 class SummonerSerializer(serializers.ModelSerializer) :
     class Meta :

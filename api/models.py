@@ -385,7 +385,8 @@ class Summonerspells(models.Model):
     spellkey = models.IntegerField(db_column='spellKey', primary_key=True)  # Field name made lowercase.
     spellid = models.CharField(db_column='spellId', max_length=100)  # Field name made lowercase.
     name = models.CharField(max_length=100, blank=True, null=True)
-    cooldown = models.IntegerField(blank=True, null=True)
+    cooldown = models.IntegerField(blank=True, null=True),
+    description = models.CharField(max_length=1000, blank=True, null=True)
 
     class Meta:
         managed = False
