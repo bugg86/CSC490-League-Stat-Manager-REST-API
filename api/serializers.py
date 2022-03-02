@@ -1,6 +1,7 @@
 from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells, Summoners, Matches
 from rest_framework import serializers
 
+#comment
 class ItemsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Items
