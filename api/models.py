@@ -399,6 +399,33 @@ class Matches(models.Model):
         db_table = 'matches'
 
 
+class Matchteams(models.Model) :
+    matchid = models.ForeignKey(Matches, models.DO_NOTHING, db_column='matchId')  # Field name made lowercase.
+    teamid = models.IntegerField(db_column='teamId')  # Field name made lowercase.
+    win = models.BooleanField(blank=True, null=True)
+    ban1 = models.IntegerField(db_column='ban1', blank=True, null=True)  # Field name made lowercase.
+    ban2 = models.IntegerField(db_column='ban2', blank=True, null=True)  # Field name made lowercase.
+    ban3 = models.IntegerField(db_column='ban3', blank=True, null=True)  # Field name made lowercase.
+    ban4 = models.IntegerField(db_column='ban4', blank=True, null=True)  # Field name made lowercase.
+    ban5 = models.IntegerField(db_column='ban5', blank=True, null=True)  # Field name made lowercase.
+    firstBaron = models.BooleanField(blank=True, null=True)
+    baronKills = models.IntegerField(db_column='baronKills', blank=True, null=True)  # Field name made lowercase.
+    firstChampion = models.BooleanField(blank=True, null=True)
+    championKills = models.IntegerField(db_column='championKills', blank=True, null=True)  # Field name made lowercase.
+    firstDragon = models.BooleanField(blank=True, null=True)
+    dragonKills = models.IntegerField(db_column='dragonKills', blank=True, null=True)  # Field name made lowercase.
+    firstInhibitor = models.BooleanField(blank=True, null=True)
+    inhibitorKills = models.IntegerField(db_column='inhibitorKills', blank=True, null=True)  # Field name made lowercase.
+    firstRiftHerald = models.BooleanField(blank=True, null=True)
+    riftHeraldKills = models.IntegerField(db_column='riftHeraldKills', blank=True, null=True)  # Field name made lowercase.
+    firstTower = models.BooleanField(blank=True, null=True)
+    towerKills = models.IntegerField(db_column='towerKills', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'matchteams'
+
+
 class Runestyles(models.Model):
     styleid = models.IntegerField(db_column='styleId', primary_key=True)  # Field name made lowercase.
     name = models.CharField(max_length=100)

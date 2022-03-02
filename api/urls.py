@@ -1,7 +1,7 @@
 from django.urls import include, path
 from rest_framework import routers
 
-from .views import ItemsViewset, QueueViewset, RuneViewset, RunestyleViewset, LeagueViewset, MapViewset, ChampionViewset, ChampionMasteryViewset, SummonerSpellViewset, SummonerViewset, MatchViewset, MatchparticipantViewset
+from .views import ItemsViewset, QueueViewset, RuneViewset, RunestyleViewset, LeagueViewset, MapViewset, ChampionViewset, ChampionMasteryViewset, SummonerSpellViewset, SummonerViewset, MatchViewset, MatchparticipantViewset, MatchteamViewset
 
 router = routers.DefaultRouter()
 router.register(r'items', ItemsViewset)
@@ -16,6 +16,7 @@ router.register(r'summonerspells', SummonerSpellViewset)
 router.register(r'summoners', SummonerViewset)
 router.register(r'matches', MatchViewset)
 router.register(r'matchparticipants', MatchparticipantViewset)
+router.register(r'matchteams', MatchteamViewset)
 
 urlpatterns = [
     path('', include(router.urls)),

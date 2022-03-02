@@ -7,8 +7,8 @@ from rest_framework.parsers import JSONParser
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 
-from .serializers import ItemsSerializer, QueueSerializer, RuneSerializer, RuneStyleSerializer, LeagueSerializer, MapSerializer, ChampionSerializer, ChampionMasterySerializer, SummonerSpellSerializer, SummonerSerializer, MatchSerializer, MatchParticipantSerializer
-from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells, Summoners, Matches, Matchparticipants
+from .serializers import ItemsSerializer, QueueSerializer, RuneSerializer, RuneStyleSerializer, LeagueSerializer, MapSerializer, ChampionSerializer, ChampionMasterySerializer, SummonerSpellSerializer, SummonerSerializer, MatchSerializer, MatchParticipantSerializer, MatchteamSerializer
+from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells, Summoners, Matches, Matchparticipants, Matchteams
 
 class ItemsViewset(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,) 
@@ -69,3 +69,8 @@ class MatchparticipantViewset(viewsets.ModelViewSet) :
     permission_classes = (IsAuthenticated,) 
     queryset = Matchparticipants.objects.all().order_by('matchid')
     serializer_class = MatchParticipantSerializer
+
+class MatchteamViewset(viewsets.ModelViewSet) :
+    permission_classes = (IsAuthenticated,) 
+    queryset = Matchteams.objects.all().order_by('matchid')
+    serializer_class = MatchteamSerializer

@@ -1,4 +1,4 @@
-from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells, Summoners, Matches, Matchparticipants
+from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells, Summoners, Matches, Matchparticipants, Matchteams
 from rest_framework import serializers
 
 #comment
@@ -310,4 +310,30 @@ class MatchParticipantSerializer(serializers.ModelSerializer) :
             'wardskilled',
             'wardsplaced',
             'win'
+        )
+
+class MatchteamSerializer(serializers.ModelSerializer) :
+    class Meta :
+        model = Matchteams
+        fields = (
+            'matchid',
+            'teamid',
+            'win',
+            'ban1',
+            'ban2',
+            'ban3',
+            'ban4',
+            'ban5',
+            'firstbaron',
+            'baronkills',
+            'firstchampion',
+            'championkills',
+            'firstdragon',
+            'dragonkills',
+            'firstinhibitor',
+            'inhibitorkills',
+            'firstriftherald',
+            'riftheraldkills',
+            'firsttower',
+            'towerkills'
         )

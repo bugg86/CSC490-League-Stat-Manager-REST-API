@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells, Summoners, Matches, Matchparticipants
+from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells, Summoners, Matches, Matchparticipants, Matchteams
 
 # Register your models here.
 
@@ -15,3 +15,4 @@ admin.site.register(Summonerspells)
 admin.site.register(Summoners)
 admin.site.register(Matches)
 admin.site.register(Matchparticipants)
+admin.site.register(Matchteams)
