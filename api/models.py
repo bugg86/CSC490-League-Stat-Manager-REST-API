@@ -295,7 +295,7 @@ class Matchparticipants(models.Model):
     largestcriticalstrike = models.IntegerField(db_column='largestCriticalStrike', blank=True, null=True)  # Field name made lowercase.
     largestkillingspree = models.IntegerField(db_column='largestKillingSpree', blank=True, null=True)  # Field name made lowercase.
     largestmultikill = models.IntegerField(db_column='largestMultiKill', blank=True, null=True)  # Field name made lowercase.
-    longsettimespentliving = models.IntegerField(db_column='longsetTimeSpentLiving', blank=True, null=True)  # Field name made lowercase.
+    longesttimespentliving = models.IntegerField(db_column='longsetTimeSpentLiving', blank=True, null=True)  # Field name made lowercase.
     magicdamagedealt = models.IntegerField(db_column='magicDamageDealt', blank=True, null=True)  # Field name made lowercase.
     magicdamagedealttochampions = models.IntegerField(db_column='magicDamageDealtToChampions', blank=True, null=True)  # Field name made lowercase.
     magicdamagetaken = models.IntegerField(db_column='magicDamageTaken', blank=True, null=True)  # Field name made lowercase.
