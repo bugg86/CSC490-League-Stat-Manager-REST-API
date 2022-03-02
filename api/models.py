@@ -390,6 +390,9 @@ class Matches(models.Model):
     queueid = models.ForeignKey(Queues, models.DO_NOTHING, db_column='queueId')  # Field name made lowercase.
     platformid = models.CharField(db_column='platformId', max_length=100)  # Field name made lowercase.
     gameversion = models.CharField(db_column='gameVersion', max_length=100)  # Field name made lowercase.
+    gamecreation = models.BigIntegerField(db_column='gameCreation')  # Field name made lowercase.
+    gameendtimestamp = models.BigIntegerField(db_column='gameEndTimestamp')  # Field name made lowercase.
+    gamestarttimestamp = models.BigIntegerField(db_column='gameStartTimestamp')  # Field name made lowercase.
 
     class Meta:
         managed = False

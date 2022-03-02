@@ -189,5 +189,8 @@ class MatchSerializer(serializers.ModelSerializer) :
             'mapid', 
             'queueid', 
             'platformid', 
-            'gameversion'
+            'gameversion',
+            'gamecreation',
+            'gameendtimestamp',
+            'gamestarttimestamp'
         )
