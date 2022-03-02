@@ -374,7 +374,8 @@ class Runes(models.Model):
     runeid = models.IntegerField(db_column='runeId', primary_key=True)  # Field name made lowercase.
     name = models.CharField(max_length=100)
     style = models.ForeignKey(Runestyles, models.DO_NOTHING, db_column='style')
-    row = models.CharField(max_length=10, blank=True, null=True)
+    shortdescription = models.CharField(db_column='shortDescription', max_length=1000)
+    longdescription = models.CharField(db_column='longDescription', max_length=1000)
 
     class Meta:
         managed = False

@@ -14,7 +14,7 @@ class QueueSerializer(serializers.ModelSerializer):
 class RuneSerializer(serializers.ModelSerializer) :
     class Meta:
         model = Runes
-        fields = ('runeid', 'name', 'style', 'row')
+        fields = ('runeid', 'name', 'style', 'shortdescription', 'longdescription')
 
 class RuneStyleSerializer(serializers.ModelSerializer) :
     class Meta:
