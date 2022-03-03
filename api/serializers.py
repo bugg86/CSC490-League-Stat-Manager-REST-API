@@ -165,6 +165,8 @@ class SummonerSpellSerializer(serializers.ModelSerializer) :
         )
 
 class SummonerSerializer(serializers.ModelSerializer) :
+    puuid = serializers.CharField(max_length=100)
+    
     class Meta :
         model = Summoners
         fields = (
@@ -195,6 +197,8 @@ class MatchSerializer(serializers.ModelSerializer) :
             'gamestarttimestamp'
         )
 class MatchParticipantSerializer(serializers.ModelSerializer) :
+    matchpuuid = serializers.CharField(max_length=100)
+    
     class Meta :
         model = Matchparticipants
         fields = (
