@@ -223,7 +223,7 @@ class MatchParticipantSerializer(serializers.ModelSerializer) :
             'gameendedinsurrender',
             'goldearned',
             'goldspent',
-            'individualpostition',
+            'individualpositition',
             'inhibitorkills',
             'inhibitortakedowns',
             'inhibitorslost',

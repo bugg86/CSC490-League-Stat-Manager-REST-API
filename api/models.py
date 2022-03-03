@@ -182,7 +182,7 @@ class Items(models.Model):
     cost_purchaseable = models.BooleanField(blank=True, null=True)
     cost_total = models.FloatField(blank=True, null=True)
     cost_sell = models.FloatField(blank=True, null=True)
-    is_rune = models.BooleanField(blank=True, null=True)
+    isrune = models.BooleanField(blank=True, null=True)
     description = models.CharField(max_length=1000, blank=True, null=True)
     colloq = models.CharField(max_length=100, blank=True, null=True)
     plaintext = models.CharField(max_length=100, blank=True, null=True)
@@ -196,7 +196,7 @@ class Items(models.Model):
     instore = models.BooleanField(blank=True, null=True)
     hidefromall = models.BooleanField(blank=True, null=True)
     requiredchampion = models.CharField(max_length=100, blank=True, null=True)
-    requireddaily = models.CharField(max_length=100, blank=True, null=True)
+    requiredally = models.CharField(max_length=100, blank=True, null=True)
     flathppoolmod = models.FloatField(blank=True, null=True)
     flatmppoolmod = models.FloatField(blank=True, null=True)
     flathpregenmod = models.FloatField(blank=True, null=True)
@@ -277,7 +277,7 @@ class Matchparticipants(models.Model):
     gameendedinsurrender = models.BooleanField(db_column='gameEndedInSurrender', blank=True, null=True)  # Field name made lowercase.
     goldearned = models.IntegerField(db_column='goldEarned', blank=True, null=True)  # Field name made lowercase.
     goldspent = models.IntegerField(db_column='goldSpent', blank=True, null=True)  # Field name made lowercase.
-    individualposition = models.CharField(db_column='individualPosition', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    individualpositition = models.CharField(db_column='individualPosition', max_length=100, blank=True, null=True)  # Field name made lowercase.
     inhibitorkills = models.IntegerField(db_column='inhibitorKills', blank=True, null=True)  # Field name made lowercase.
     inhibitortakedowns = models.IntegerField(db_column='inhibitorTakedowns', blank=True, null=True)  # Field name made lowercase.
     inhibitorslost = models.IntegerField(db_column='inhibitorsLost', blank=True, null=True)  # Field name made lowercase.
