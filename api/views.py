@@ -230,7 +230,7 @@ class MatchViewset(viewsets.ModelViewSet) :
 
 class MatchparticipantViewset(viewsets.ModelViewSet) :
     permission_classes = (IsAuthenticated,) 
-    queryset = Matchparticipants.objects.all().order_by('matchid')
+    queryset = Matchparticipants.objects.all()
     filter_backends = [DjangoFilterBackend]
     filterset_fields = [
         'matchid',
@@ -258,7 +258,7 @@ class MatchparticipantViewset(viewsets.ModelViewSet) :
         'gameendedinsurrender',
         'goldearned',
         'goldspent',
-        'individualpostition',
+        'individualposition',
         'inhibitorkills',
         'inhibitortakedowns',
         'inhibitorslost',
