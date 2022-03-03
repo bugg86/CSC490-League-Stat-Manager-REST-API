@@ -323,8 +323,8 @@ class Matchparticipants(models.Model):
     rune5id = models.ForeignKey('Runes', models.DO_NOTHING, db_column='rune5Id', blank=True, null=True, related_name='rune5id')  # Field name made lowercase.
     rune6id = models.ForeignKey('Runes', models.DO_NOTHING, db_column='rune6Id', blank=True, null=True, related_name='rune6id')  # Field name made lowercase.
     rune7id = models.ForeignKey('Runes', models.DO_NOTHING, db_column='rune7Id', blank=True, null=True, related_name='rune7id')  # Field name made lowercase.
-    rune8id = models.ForeignKey('Runes', models.DO_NOTHING, db_column='rune8Id', blank=True, null=True, related_name='rune8id')  # Field name made lowercase.
-    rune9id = models.ForeignKey('Runes', models.DO_NOTHING, db_column='rune9Id', blank=True, null=True, related_name='rune9id')  # Field name made lowercase.
+    runestyle1id = models.ForeignKey('Runestyles', models.DO_NOTHING, db_column='runeStyle1Id', blank=True, null=True, related_name='runestyle1id')  # Field name made lowercase.
+    runestyle2id = models.ForeignKey('Runestyles', models.DO_NOTHING, db_column='runeStyle2Id', blank=True, null=True, related_name='runestyle2id')  # Field name made lowercase.
     sightwardsboughtingame = models.IntegerField(db_column='sightWardsBoughtInGame', blank=True, null=True)  # Field name made lowercase.
     spell1casts = models.IntegerField(db_column='spell1Casts', blank=True, null=True)  # Field name made lowercase.
     spell2casts = models.IntegerField(db_column='spell2Casts', blank=True, null=True)  # Field name made lowercase.
