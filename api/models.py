@@ -408,18 +408,18 @@ class Matchteams(models.Model) :
     ban3 = models.IntegerField(db_column='ban3', blank=True, null=True)  # Field name made lowercase.
     ban4 = models.IntegerField(db_column='ban4', blank=True, null=True)  # Field name made lowercase.
     ban5 = models.IntegerField(db_column='ban5', blank=True, null=True)  # Field name made lowercase.
-    firstBaron = models.BooleanField(blank=True, null=True)
-    baronKills = models.IntegerField(db_column='baronKills', blank=True, null=True)  # Field name made lowercase.
-    firstChampion = models.BooleanField(blank=True, null=True)
-    championKills = models.IntegerField(db_column='championKills', blank=True, null=True)  # Field name made lowercase.
-    firstDragon = models.BooleanField(blank=True, null=True)
-    dragonKills = models.IntegerField(db_column='dragonKills', blank=True, null=True)  # Field name made lowercase.
-    firstInhibitor = models.BooleanField(blank=True, null=True)
-    inhibitorKills = models.IntegerField(db_column='inhibitorKills', blank=True, null=True)  # Field name made lowercase.
-    firstRiftHerald = models.BooleanField(blank=True, null=True)
-    riftHeraldKills = models.IntegerField(db_column='riftHeraldKills', blank=True, null=True)  # Field name made lowercase.
-    firstTower = models.BooleanField(blank=True, null=True)
-    towerKills = models.IntegerField(db_column='towerKills', blank=True, null=True)  # Field name made lowercase.
+    firstbaron = models.BooleanField(blank=True, null=True)
+    baronkills = models.IntegerField(db_column='baronKills', blank=True, null=True)  # Field name made lowercase.
+    firstchampion = models.BooleanField(blank=True, null=True)
+    championkills = models.IntegerField(db_column='championKills', blank=True, null=True)  # Field name made lowercase.
+    firstdragon = models.BooleanField(blank=True, null=True)
+    dragonkills = models.IntegerField(db_column='dragonKills', blank=True, null=True)  # Field name made lowercase.
+    firstinhibitor = models.BooleanField(blank=True, null=True)
+    inhibitorkills = models.IntegerField(db_column='inhibitorKills', blank=True, null=True)  # Field name made lowercase.
+    firstriftherald = models.BooleanField(blank=True, null=True)
+    riftheraldkills = models.IntegerField(db_column='riftHeraldKills', blank=True, null=True)  # Field name made lowercase.
+    firsttower = models.BooleanField(blank=True, null=True)
+    towerkills = models.IntegerField(db_column='towerKills', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
