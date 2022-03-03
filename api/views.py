@@ -7,6 +7,8 @@ from rest_framework.parsers import JSONParser
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 
+from django_filters.rest_framework import DjangoFilterBackend
+
 from .serializers import ItemsSerializer, QueueSerializer, RuneSerializer, RuneStyleSerializer, LeagueSerializer, MapSerializer, ChampionSerializer, ChampionMasterySerializer, SummonerSpellSerializer, SummonerSerializer, MatchSerializer, MatchParticipantSerializer, MatchteamSerializer
 from .models import Items, Queues, Runes, Runestyles, Leagues, Maps, Champions, Championmastery, Summonerspells, Summoners, Matches, Matchparticipants, Matchteams
 
@@ -53,11 +55,14 @@ class ChampionMasteryViewset(viewsets.ModelViewSet) :
 class SummonerSpellViewset(viewsets.ModelViewSet) :
     permission_classes = (IsAuthenticated,) 
     queryset = Summonerspells.objects.all().order_by('spellkey')
+    filter_backends = [DjangoFilterBackend]
     serializer_class = SummonerSpellSerializer
 
 class SummonerViewset(viewsets.ModelViewSet) :
     permissions_classes = (IsAuthenticated,)
     queryset = Summoners.objects.all().order_by('id')
+    filter_backends = [DjangoFilterBackend]
+    filter_fields = ['puuid', 'id', 'name']
     serializer_class = SummonerSerializer
 
 class MatchViewset(viewsets.ModelViewSet) :
