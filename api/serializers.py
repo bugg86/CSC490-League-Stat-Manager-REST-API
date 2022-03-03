@@ -268,7 +268,6 @@ class MatchParticipantSerializer(serializers.ModelSerializer) :
             'rune4id',
             'rune5id',
             'rune6id',
-            'rune7id',
             'runestyle1id',
             'runestyle2id',
             'sightwardsboughtingame',
