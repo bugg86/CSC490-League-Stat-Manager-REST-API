@@ -258,7 +258,6 @@ class MatchparticipantViewset(viewsets.ModelViewSet) :
         'gameendedinsurrender',
         'goldearned',
         'goldspent',
-        'individualposition',
         'inhibitorkills',
         'inhibitortakedowns',
         'inhibitorslost',

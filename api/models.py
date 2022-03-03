@@ -277,7 +277,6 @@ class Matchparticipants(models.Model):
     gameendedinsurrender = models.BooleanField(db_column='gameEndedInSurrender', blank=True, null=True)  # Field name made lowercase.
     goldearned = models.IntegerField(db_column='goldEarned', blank=True, null=True)  # Field name made lowercase.
     goldspent = models.IntegerField(db_column='goldSpent', blank=True, null=True)  # Field name made lowercase.
-    individualpositition = models.CharField(db_column='individualPosition', max_length=100, blank=True, null=True)  # Field name made lowercase.
     inhibitorkills = models.IntegerField(db_column='inhibitorKills', blank=True, null=True)  # Field name made lowercase.
     inhibitortakedowns = models.IntegerField(db_column='inhibitorTakedowns', blank=True, null=True)  # Field name made lowercase.
     inhibitorslost = models.IntegerField(db_column='inhibitorsLost', blank=True, null=True)  # Field name made lowercase.
