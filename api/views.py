@@ -291,7 +291,7 @@ class MatchparticipantViewset(viewsets.ModelViewSet) :
         'physicaldamagedealttochampions',
         'physicaldamagetaken',
         'profileicon',
-        'puuid',
+        'matchpuuid',
         'quadrakills',
         'riotidname',
         'riotidtagline',

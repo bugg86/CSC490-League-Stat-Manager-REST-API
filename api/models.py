@@ -310,7 +310,7 @@ class Matchparticipants(models.Model):
     physicaldamagedealttochampions = models.IntegerField(db_column='physicalDamageDealtToChampions', blank=True, null=True)  # Field name made lowercase.
     physicaldamagetaken = models.IntegerField(db_column='physicalDamageTaken', blank=True, null=True)  # Field name made lowercase.
     profileicon = models.IntegerField(db_column='profileIcon', blank=True, null=True)  # Field name made lowercase.
-    puuid = models.ForeignKey('Summoners', models.DO_NOTHING, db_column='puuid', blank=True, null=True)
+    matchpuuid = models.ForeignKey('Summoners', models.DO_NOTHING, db_column='matchpuuid', blank=True, null=True, related_name='matchpuuid')
     quadrakills = models.IntegerField(db_column='quadraKills', blank=True, null=True)  # Field name made lowercase.
     riotidname = models.CharField(db_column='riotIdName', max_length=100, blank=True, null=True)  # Field name made lowercase.
     riotidtagline = models.CharField(db_column='riotIdTagLine', max_length=100, blank=True, null=True)  # Field name made lowercase.

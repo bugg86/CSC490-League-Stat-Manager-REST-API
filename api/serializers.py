@@ -256,7 +256,7 @@ class MatchParticipantSerializer(serializers.ModelSerializer) :
             'physicaldamagedealttochampions',
             'physicaldamagetaken',
             'profileicon',
-            'puuid',
+            'matchpuuid',
             'quadrakills',
             'riotidname',
             'riotidtagline',
