@@ -197,8 +197,6 @@ class MatchSerializer(serializers.ModelSerializer) :
             'gamestarttimestamp'
         )
 class MatchParticipantSerializer(serializers.ModelSerializer) :
-    matchpuuid = serializers.CharField(max_length=100)
-    
     class Meta :
         model = Matchparticipants
         fields = '__all__'
