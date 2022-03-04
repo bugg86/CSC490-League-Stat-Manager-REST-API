@@ -233,6 +233,7 @@ class MatchparticipantViewset(viewsets.ModelViewSet) :
     queryset = Matchparticipants.objects.all()
     filter_backends = [DjangoFilterBackend]
     filterset_fields = [
+        'customparticipantid',
         'matchid',
         'summonerid',
         'assists',
