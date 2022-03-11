@@ -1,5 +1,8 @@
 var db = require('./controllers/dboperations.js');
+
 var map = require('./models/maps.js');
+var summoner = require('./models/summoners.js');
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
@@ -30,6 +33,19 @@ router.route('/maps').get((request, response) => {
 router.route('/maps').post((request, response) => {
     let map = request.body;
     db.addMap(map).then((data) => {
+        response.status(201).json(data);
+    });
+});
+
+router.route('/summoners').get((request, response) => {
+    db.getSummoners().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/summoners').post((request, response) => {
+    let summoner = request.body;
+    db.addSummoner(summoner).then((data) => {
         response.status(201).json(data);
     });
 });
