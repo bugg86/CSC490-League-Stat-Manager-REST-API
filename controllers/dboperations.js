@@ -41,7 +41,7 @@ async function addSummoner(summoner) {
     try {
         let pool = await sql.connect(config);
         let insertSummoner = await pool.request()
-        .input('summonerid', sql.NVarChar(100), summoner.summonerid)
+        .input('id', sql.NVarChar(100), summoner.id)
         .input('name', sql.NVarChar(100), summoner.name)
         .input('accountid', sql.NVarChar(100), summoner.accountid)
         .input('puuid', sql.NVarChar(100), summoner.puuid)
