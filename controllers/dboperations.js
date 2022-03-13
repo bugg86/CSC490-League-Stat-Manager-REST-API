@@ -153,6 +153,9 @@ async function addChampionMastery(championMastery) {
         .execute('Insert_ChampionMastery');
         return insertChampionMastery.recordsets;
     }
+    catch (err) {
+        console.log(err);
+    }
 }
 
 module.exports = {
