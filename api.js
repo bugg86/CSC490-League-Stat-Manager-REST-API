@@ -2,7 +2,7 @@ var db = require('./controllers/dboperations.js');
 
 var map = require('./models/maps.js');
 var summoner = require('./models/summoners.js');
-var match = require('./modles/matches.js');
+var match = require('./models/matches.js');
 
 var express = require('express');
 var bodyParser = require('body-parser');
