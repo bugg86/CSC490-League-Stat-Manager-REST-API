@@ -7,8 +7,9 @@ async function getMaps () {
         let maps = await pool.request().query("SELECT * FROM maps");
         return maps.recordset;
     } 
-    catch (error) {
-        console.log(error);
+    catch (err) {
+        console.log(err);
+        return err;
     }
 }
 
@@ -23,6 +24,7 @@ async function addMap (map) {
     }
     catch (err) {
         console.log(err);
+        return err;
     }
 }
 
@@ -32,8 +34,9 @@ async function getSummoners() {
         let summoners = await pool.request().query("SELECT * FROM summoners");
         return summoners.recordset;
     }
-    catch (error) {
-        console.log(error);
+    catch (err) {
+        console.log(err);
+        return err;
     }
 }
 
@@ -53,6 +56,7 @@ async function addSummoner(summoner) {
     }
     catch (err) {
         console.log(err);
+        return err;
     }
 }
 
@@ -62,8 +66,9 @@ async function getMatches() {
         let matches = await pool.request().query("SELECT * FROM matches");
         return matches.recordset;
     }
-    catch (error) {
-        console.log(error);
+    catch (err) {
+        console.log(err);
+        return err;
     }
 }
 
@@ -88,6 +93,7 @@ async function addMatch(match) {
     }
     catch (err) {
         console.log(err);
+        return err;
     }
 }
 
@@ -97,8 +103,9 @@ async function getLeagues() {
         let leagues = await pool.request().query("SELECT * FROM leagues");
         return leagues.recordset;
     }
-    catch (error) {
-        console.log(error);
+    catch (err) {
+        console.log(err);
+        return err;
     }
 }
 
@@ -124,6 +131,7 @@ async function addLeague(league) {
     }
     catch (err) {
         console.log(err);
+        return err;
     }
 }
 
@@ -133,8 +141,9 @@ async function getChampionMasteries() {
         let championMasteries = await pool.request().query("SELECT * FROM championMastery");
         return championMasteries.recordset;
     }
-    catch (error) {
-        console.log(error);
+    catch (err) {
+        console.log(err);
+        return err;
     }
 }
 
@@ -155,6 +164,7 @@ async function addChampionMastery(championMastery) {
     }
     catch (err) {
         console.log(err);
+        return err;
     }
 }
 
@@ -164,8 +174,9 @@ async function getQueues() {
         let queues = await pool.request().query("SELECT * FROM queues");
         return queues.recordset;
     }
-    catch (error) {
-        console.log(error);
+    catch (err) {
+        console.log(err);
+        return err;
     }
 }
 
@@ -175,8 +186,9 @@ async function getRunes() {
         let runes = await pool.request().query("SELECT * FROM runes");
         return runes.recordset;
     }
-    catch (error) {
-        console.log(error);
+    catch (err) {
+        console.log(err);
+        return err;
     }
 }
 
@@ -186,8 +198,9 @@ async function getRuneStyles() {
         let runeStyles = await pool.request().query("SELECT * FROM runeStyles");
         return runeStyles.recordset;
     }
-    catch (error) {
-        console.log(error);
+    catch (err) {
+        console.log(err);
+        return err;
     }
 }
 
@@ -197,8 +210,9 @@ async function getSummonerSpells() {
         let summonerSpells = await pool.request().query("SELECT * FROM summonerSpells");
         return summonerSpells.recordset;
     }
-    catch (error) {
-        console.log(error);
+    catch (err) {
+        console.log(err);
+        return err;
     }
 }
 
