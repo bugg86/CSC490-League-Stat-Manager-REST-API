@@ -95,5 +95,7 @@ module.exports = {
     getMaps : getMaps,
     addMap : addMap,
     getSummoners : getSummoners,
-    addSummoner : addSummoner
+    addSummoner : addSummoner,
+    getMatches : getMatches,
+    addMatch : addMatch
 }
