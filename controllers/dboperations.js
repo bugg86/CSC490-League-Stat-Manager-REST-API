@@ -158,11 +158,33 @@ async function addChampionMastery(championMastery) {
     }
 }
 
-async function getQueues(queue) {
+async function getQueues() {
     try {
         let pool = await sql.connect(config);
         let queues = await pool.request().query("SELECT * FROM queues");
         return queues.recordset;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+async function getRunes() {
+    try {
+        let pool = await sql.connect(config);
+        let runes = await pool.request().query("SELECT * FROM runes");
+        return runes.recordset;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+async function getRuneStyles() {
+    try {
+        let pool = await sql.connect(config);
+        let runeStyles = await pool.request().query("SELECT * FROM runeStyles");
+        return runeStyles.recordset;
     }
     catch (error) {
         console.log(error);
@@ -180,5 +202,7 @@ module.exports = {
     addLeague : addLeague,
     getChampionMasteries : getChampionMasteries,
     addChampionMastery : addChampionMastery,
-    getQueues : getQueues
+    getQueues : getQueues,
+    getRunes : getRunes,
+    getRuneStyles : getRuneStyles
 }

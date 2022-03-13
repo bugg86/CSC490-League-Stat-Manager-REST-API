@@ -6,6 +6,8 @@ var match = require('./models/matches.js');
 var league = require('./models/leagues.js');
 var championMastery = require('./models/championMasteries.js');
 var queue = require('./models/queues.js');
+var rune = require('/models/runes.js');
+var runeStyle = require('/models/runeStyles.js');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -95,6 +97,18 @@ router.route('/championmasteries').post((request, response) => {
 
 router.route('/queues').get((request, response) => {
     db.getQueues().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/runes').get((request, response) => {
+    db.getRunes().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/runestyles').get((request, response) => {
+    db.getRuneStyles().then((data) => {
         response.json(data);
     });
 });
