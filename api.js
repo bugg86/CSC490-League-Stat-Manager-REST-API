@@ -79,13 +79,13 @@ router.route('/leagues').post((request, response) => {
     });
 });
 
-router.route('/championMastery').get((request, response) => {
+router.route('/championmasteries').get((request, response) => {
     db.getChampionMastery().then((data) => {
         response.json(data);
     });
 });
 
-router.route('/championMastery').post((request, response) => {
+router.route('/championmasteries').post((request, response) => {
     let championMastery = request.body;
     db.addChampionMastery(championMastery).then((data) => {
         response.status(201).json(data);
