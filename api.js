@@ -5,6 +5,7 @@ var summoner = require('./models/summoners.js');
 var match = require('./models/matches.js');
 var league = require('./models/leagues.js');
 var championMastery = require('./models/championMasteries.js');
+var queue = require('./models/queues.js');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -89,5 +90,11 @@ router.route('/championmasteries').post((request, response) => {
     let championMastery = request.body;
     db.addChampionMastery(championMastery).then((data) => {
         response.status(201).json(data);
+    });
+});
+
+router.route('/queues').get((request, response) => {
+    db.getQueues().then((data) => {
+        response.json(data);
     });
 });

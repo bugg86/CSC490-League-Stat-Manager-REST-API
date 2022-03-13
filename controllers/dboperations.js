@@ -158,6 +158,17 @@ async function addChampionMastery(championMastery) {
     }
 }
 
+async function getQueues(queue) {
+    try {
+        let pool = await sql.connect(config);
+        let queues = await pool.request().query("SELECT * FROM queues");
+        return queues.recordset;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     getMaps : getMaps,
     addMap : addMap,
@@ -168,5 +179,6 @@ module.exports = {
     getLeagues : getLeagues,
     addLeague : addLeague,
     getChampionMasteries : getChampionMasteries,
-    addChampionMastery : addChampionMastery
+    addChampionMastery : addChampionMastery,
+    getQueues : getQueues
 }
