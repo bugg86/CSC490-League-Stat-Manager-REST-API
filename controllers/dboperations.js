@@ -56,6 +56,41 @@ async function addSummoner(summoner) {
     }
 }
 
+async function getMatches() {
+    try {
+        let pool = await sql.connect(config);
+        let matches = await pool.request().query("SELECT * FROM matches");
+        return matches.recordset;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+async function addMatch(match) {
+    try {
+        let pool = await sql.connect(config);
+        let insertMatch = await pool.request()
+        .input('matchid', sql.NVarChar(100), match.matchid)
+        .input('gamemode', sql.NVarChar(100), match.gamemode)
+        .input('gameduration', sql.Int, match.gameduration)
+        .input('gamename', sql.NVarChar(100), match.gamename)
+        .input('gametype', sql.NVarChar(100), match.gametype)
+        .input('mapid', sql.Int, match.mapid)
+        .input('queueid', sql.Int, match.queueid)
+        .input('platformid', sql.NVarChar(100), match.platformid)
+        .input('gameversion', sql.NVarChar(100), match.gameversion)
+        .input('gamecreation', sql.BigInt, match.gamecreation)
+        .input('gameendtimestamp', sql.BigInt, match.gameendtimestamp)
+        .input('gamestarttimestamp', sql.BigInt, match.gamestarttimestamp)
+        .execute('Insert_Matches');
+        return insertMatch.recordsets;
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     getMaps : getMaps,
     addMap : addMap,
