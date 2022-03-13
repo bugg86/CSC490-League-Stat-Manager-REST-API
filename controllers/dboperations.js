@@ -102,7 +102,7 @@ async function getLeagues() {
     }
 }
 
-async function addLeague() {
+async function addLeague(league) {
     try {
         let pool = await sql.connect(config);
         let insertLeague = await pool.request()
@@ -127,6 +127,34 @@ async function addLeague() {
     }
 }
 
+async function getChampionMasteries() {
+    try {
+        let pool = await sql.connect(config);
+        let championMasteries = await pool.request().query("SELECT * FROM championMastery");
+        return championMasteries.recordset;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+async function addChampionMastery(championMastery) {
+    try {
+        let pool = await sql.connect(config);
+        let insertChampionMastery = await pool.request()
+        .inpurt('summonerid', sql.NVarChar(100), championMastery.summonerid)
+        .input('championid', sql.Int, championMastery.championid)
+        .input('championlevel', sql.Int, championMastery.championlevel)
+        .input('championpoints', sql.Int, championMastery.championpoints)
+        .input('championpointssincelastlevel', sql.Numeric(18,0), championMastery.championpointsuntilnextlevel)
+        .input('championpointsuntilnextlevel', sql.Numeric(18,0), championMastery.lastplayed)
+        .input('chestgranted', sql.Bit, championMastery.playerid)
+        .input('tokensEarned', sql.Bit, championMastery.summonerid)
+        .execute('Insert_ChampionMastery');
+        return insertChampionMastery.recordsets;
+    }
+}
+
 module.exports = {
     getMaps : getMaps,
     addMap : addMap,
@@ -135,5 +163,7 @@ module.exports = {
     getMatches : getMatches,
     addMatch : addMatch,
     getLeagues : getLeagues,
-    addLeague : addLeague
+    addLeague : addLeague,
+    getChampionMasteries : getChampionMasteries,
+    addChampionMastery : addChampionMastery
 }

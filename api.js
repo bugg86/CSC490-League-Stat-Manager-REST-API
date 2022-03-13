@@ -4,6 +4,7 @@ var map = require('./models/maps.js');
 var summoner = require('./models/summoners.js');
 var match = require('./models/matches.js');
 var league = require('./models/leagues.js');
+var championMastery = require('./models/championMasteries.js');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -74,6 +75,19 @@ router.route('/leagues').get((request, response) => {
 router.route('/leagues').post((request, response) => {
     let league = request.body;
     db.addLeague(league).then((data) => {
+        response.status(201).json(data);
+    });
+});
+
+router.route('/championMastery').get((request, response) => {
+    db.getChampionMastery().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/championMastery').post((request, response) => {
+    let championMastery = request.body;
+    db.addChampionMastery(championMastery).then((data) => {
         response.status(201).json(data);
     });
 });
