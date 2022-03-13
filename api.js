@@ -80,7 +80,7 @@ router.route('/leagues').post((request, response) => {
 });
 
 router.route('/championmasteries').get((request, response) => {
-    db.getChampionMastery().then((data) => {
+    db.getChampionMasteries().then((data) => {
         response.json(data);
     });
 });
