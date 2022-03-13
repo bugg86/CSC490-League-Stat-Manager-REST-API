@@ -2,6 +2,7 @@ var db = require('./controllers/dboperations.js');
 
 var map = require('./models/maps.js');
 var summoner = require('./models/summoners.js');
+var match = require('./modles/matches.js');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -46,6 +47,19 @@ router.route('/summoners').get((request, response) => {
 router.route('/summoners').post((request, response) => {
     let summoner = request.body;
     db.addSummoner(summoner).then((data) => {
+        response.status(201).json(data);
+    });
+});
+
+router.route('/matches').get((request, response) => {
+    db.getMatches().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/matches').post((request, response) => {
+    let match = request.body;
+    db.addMatch(match).then((data) => {
         response.status(201).json(data);
     });
 });
