@@ -191,6 +191,17 @@ async function getRuneStyles() {
     }
 }
 
+async function getSummonerSpells() {
+    try {
+        let pool = await sql.connect(config);
+        let summonerSpells = await pool.request().query("SELECT * FROM summonerSpells");
+        return summonerSpells.recordset;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     getMaps : getMaps,
     addMap : addMap,
@@ -204,5 +215,6 @@ module.exports = {
     addChampionMastery : addChampionMastery,
     getQueues : getQueues,
     getRunes : getRunes,
-    getRuneStyles : getRuneStyles
+    getRuneStyles : getRuneStyles,
+    getSummonerSpells : getSummonerSpells
 }

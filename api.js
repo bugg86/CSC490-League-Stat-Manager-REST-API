@@ -6,8 +6,9 @@ var match = require('./models/matches.js');
 var league = require('./models/leagues.js');
 var championMastery = require('./models/championMasteries.js');
 var queue = require('./models/queues.js');
-var rune = require('/models/runes.js');
-var runeStyle = require('/models/runeStyles.js');
+var rune = require('./models/runes.js');
+var runeStyle = require('./models/runeStyles.js');
+var summonerSpell = require('./models/summonerSpells.js');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -110,5 +111,11 @@ router.route('/runes').get((request, response) => {
 router.route('/runestyles').get((request, response) => {
     db.getRuneStyles().then((data) => {
         response.json(data);
+    });
+});
+
+router.route('/summonerspells').get((request, response) => {
+    db.getSummonerSpells().then((data) => {
+        response.status(201).json(data);
     });
 });
