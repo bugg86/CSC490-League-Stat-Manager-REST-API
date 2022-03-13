@@ -91,11 +91,49 @@ async function addMatch(match) {
     }
 }
 
+async function getLeagues() {
+    try {
+        let pool = await sql.connect(config);
+        let leagues = await pool.request().query("SELECT * FROM leagues");
+        return leagues.recordset;
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+async function addLeague() {
+    try {
+        let pool = await sql.connect(config);
+        let insertLeague = await pool.request()
+        .input('leagueid', sql.NVarChar(100), league.leagueid)
+        .input('queuetype', sql.NVarChar(100), league.queuetype)
+        .input('tier', sql.NVarChar(100), league.tier)
+        .input('rank', sql.NVarChar(100), league.rank)
+        .input('summonerid', sql.NVarChar(100), league.summonerid)
+        .input('summonername', sql.NVarChar(100), league.summonername)
+        .input('leaguepoints', sql.Int, league.leaguepoints)
+        .input('wins', sql.Int, league.wins)
+        .input('losses', sql.Int, league.losses)
+        .input('veteran', sql.Bit, league.veteran)
+        .input('inactive', sql.Bit, league.inactive)
+        .input('freshblood', sql.Bit, league.freshblood)
+        .input('hotstreak', sql.Bit, league.hotstreak)
+        .execute('Insert_League');
+        return insertLeague.recordsets;
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     getMaps : getMaps,
     addMap : addMap,
     getSummoners : getSummoners,
     addSummoner : addSummoner,
     getMatches : getMatches,
-    addMatch : addMatch
+    addMatch : addMatch,
+    getLeagues : getLeagues,
+    addLeague : addLeague
 }

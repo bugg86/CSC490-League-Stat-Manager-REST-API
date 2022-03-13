@@ -3,6 +3,7 @@ var db = require('./controllers/dboperations.js');
 var map = require('./models/maps.js');
 var summoner = require('./models/summoners.js');
 var match = require('./models/matches.js');
+var league = require('./models/leagues.js');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -60,6 +61,19 @@ router.route('/matches').get((request, response) => {
 router.route('/matches').post((request, response) => {
     let match = request.body;
     db.addMatch(match).then((data) => {
+        response.status(201).json(data);
+    });
+});
+
+router.route('/leagues').get((request, response) => {
+    db.getLeagues().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/leagues').post((request, response) => {
+    let league = request.body;
+    db.addLeague(league).then((data) => {
         response.status(201).json(data);
     });
 });
