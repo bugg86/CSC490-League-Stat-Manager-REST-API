@@ -9,6 +9,10 @@ var queue = require('./models/queues.js');
 var rune = require('./models/runes.js');
 var runeStyle = require('./models/runeStyles.js');
 var summonerSpell = require('./models/summonerSpells.js');
+var matchTeam = require('./models/matchTeams.js');
+var champion = require('./models/champions.js');
+var item = require('./models/items.js');
+var matchParticipant = require('./models/matchParticipants.js');
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -116,6 +120,44 @@ router.route('/runestyles').get((request, response) => {
 
 router.route('/summonerspells').get((request, response) => {
     db.getSummonerSpells().then((data) => {
+        response.status(201).json(data);
+    });
+});
+
+router.route('/matchteams').get((request, response) => {
+    db.getMatchTeams().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/matchteams').post((request, response) => {
+    let matchTeam = request.body;
+    db.addMatchTeam(matchTeam).then((data) => {
+        response.status(201).json(data);
+    });
+});
+
+router.route('/champions').get((request, response) => {
+    db.getChampions().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/items').get((request, response) => {
+    db.getItems().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/matchparticipants').get((request, response) => {
+    db.getMatchParticipants().then((data) => {
+        response.json(data);
+    });
+});
+
+router.route('/matchparticipants').post((request, response) => {
+    let matchParticipant = request.body;
+    db.addMatchParticipant(matchParticipant).then((data) => {
         response.status(201).json(data);
     });
 });
