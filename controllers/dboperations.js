@@ -297,7 +297,7 @@ async function getMatchParticipants() {
     }
 }
 
-async function addMatchParticipant() {
+async function addMatchParticipant(matchParticipant) {
     try {
         let pool = await sql.connect(config);
         let insertMatchParticipant = await pool.request()
@@ -353,7 +353,7 @@ async function addMatchParticipant() {
         .input('objectivesstolen', sql.Int, matchParticipant.objectivesstolen)
         .input('objectivesstolenassists', sql.Int, matchParticipant.objectivesstolenassists)
         .input('participantid', sql.NVarChar(100), matchParticipant.participantid)
-        input('pentakills', sql.Int, matchParticipant.pentakills)
+        .input('pentakills', sql.Int, matchParticipant.pentakills)
         .input('physicaldamagedealt', sql.Int, matchParticipant.physicaldamagedealt)
         .input('physicaldamagedealttochampions', sql.Int, matchParticipant.physicaldamagedealttochampions)
         .input('physicaldamagetaken', sql.Int, matchParticipant.physicaldamagetaken)
