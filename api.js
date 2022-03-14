@@ -49,7 +49,7 @@ router.route('/maps').post((request, response) => {
 });
 
 router.route('/summoners').get((request, response) => {
-    db.getSummoners().then((data) => {
+    db.getSummoners(request.query).then((data) => {
         response.json(data);
     });
 });

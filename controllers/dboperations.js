@@ -28,11 +28,43 @@ async function addMap (map) {
     }
 }
 
-async function getSummoners() {
+async function getSummoners(query) {
     try {
-        let pool = await sql.connect(config);
-        let summoners = await pool.request().query("SELECT * FROM summoners");
-        return summoners.recordset;
+        if (query == null) {
+            let pool = await sql.connect(config);
+            let summoners = await pool.request().query("SELECT * FROM summoners" + search_params);
+            return summoners.recordset;
+        }
+        else {
+            let pool = await sql.connect(config);
+            let search_params = " WHERE ";
+            let i = 0;
+            for (const [key, value] of Object.entries(query)) {
+                let pool2 = await sql.connect(config);
+                let datatype = await pool2.request().query(`SELECT DATA_TYPE FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME = 'summoners' AND COLUMN_NAME = '${key}'`)
+                console.log(datatype.recordsets[0][0]['DATA_TYPE'])
+                if (Object.entries(query).length > 1) {
+                    switch (datatype.recordsets[0][0]['DATA_TYPE']) {
+                        case "nvarchar":
+                            search_params = search_params + key + "=" + `'${query[key]}'`;
+                            break;
+                        case "int" || "bigint" || "float" || "numeric":
+                            search_params = search_params + key + "=" + query[key];
+                            break;
+                        default:
+                            search_params = search_params + key + "=" + query[key];
+                            break;
+                    }
+                    if (i < Object.entries(query).length - 1) {
+                        search_params = search_params + " AND ";
+                        i++;
+                    }
+                }
+            }
+            console.log(search_params);
+            let summoners = await pool.request().query("SELECT * FROM summoners" + search_params);
+            return summoners.recordset;
+        }
     }
     catch (err) {
         console.log(err);
