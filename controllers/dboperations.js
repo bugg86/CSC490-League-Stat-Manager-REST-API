@@ -27,7 +27,6 @@ async function filteredSearch(table, query) {
                 }
             }
         }
-        console.log(search_params);
         let summoners = await pool.request().query(`SELECT * FROM ${table}` + search_params);
         return summoners.recordset;
     }
@@ -66,12 +65,13 @@ async function addMap (map) {
 
 async function getSummoners(query) {
     try {
-        if (query == null) {
+        if (Object.keys(query).length === 0) {
             let pool = await sql.connect(config);
             let summoners = await pool.request().query("SELECT * FROM summoners");
             return summoners.recordset;
         }
         else {
+            console.log(query);
             return filteredSearch("summoners", query);
         }
     }
