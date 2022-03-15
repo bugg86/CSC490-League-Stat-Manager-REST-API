@@ -9,7 +9,7 @@ async function filteredSearch(table, query) {
         for (const [key, value] of Object.entries(query)) {
             let pool2 = await sql.connect(config);
             let datatype = await pool2.request().query(`SELECT DATA_TYPE FROM INFORMATION_SCHEMA.columns WHERE TABLE_NAME = '${table}' AND COLUMN_NAME = '${key}'`)
-            if (Object.entries(query).length > 1) {
+            if (Object.entries(query).length >= 1) {
                 switch (datatype.recordsets[0][0]['DATA_TYPE']) {
                     case "nvarchar":
                         search_params = search_params + key + "=" + `'${query[key]}'`;
@@ -71,7 +71,6 @@ async function getSummoners(query) {
             return summoners.recordset;
         }
         else {
-            console.log(query);
             return filteredSearch("summoners", query);
         }
     }
