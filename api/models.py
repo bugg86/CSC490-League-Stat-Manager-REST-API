@@ -252,7 +252,6 @@ class Maps(models.Model):
 
 
 class Matchparticipants(models.Model):
-    customparticipantid = models.CharField(db_column='customparticipantid', primary_key=True, max_length=150)  # Field name made lowercase.
     matchid = models.ForeignKey('Matches', models.DO_NOTHING, db_column='matchId')  # Field name made lowercase.
     summonerid = models.CharField(db_column='summonerId', max_length=100, blank=True, null=True)  # Field name made lowercase.
     assists = models.IntegerField(blank=True, null=True)
