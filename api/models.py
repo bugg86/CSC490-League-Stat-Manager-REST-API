@@ -196,7 +196,7 @@ class Items(models.Model):
     instore = models.BooleanField(blank=True, null=True)
     hidefromall = models.BooleanField(blank=True, null=True)
     requiredchampion = models.CharField(max_length=100, blank=True, null=True)
-    requiredally = models.CharField(max_length=100, blank=True, null=True)
+    requireddaily = models.CharField(max_length=100, blank=True, null=True)
     flathppoolmod = models.FloatField(blank=True, null=True)
     flatmppoolmod = models.FloatField(blank=True, null=True)
     flathpregenmod = models.FloatField(blank=True, null=True)
