@@ -167,7 +167,7 @@ class ChampionViewset(viewsets.ModelViewSet) :
 
 class ChampionMasteryViewset(viewsets.ModelViewSet) :
     permission_classes = (IsAuthenticated,) 
-    queryset = Championmastery.objects.all().order_by('summonerid')
+    queryset = Championmastery.objects.all().order_by('championpoints')
     filter_backends = [DjangoFilterBackend]
     filterset_fields = [
         'summonerid', 
