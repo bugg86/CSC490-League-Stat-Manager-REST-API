@@ -231,6 +231,12 @@ class MatchViewset(viewsets.ModelViewSet) :
 class MatchparticipantViewset(viewsets.ModelViewSet) :
     permission_classes = (IsAuthenticated,) 
     queryset = Matchparticipants.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = [
+        'matchid',
+        'puuid',
+        'summonerid'
+    ]
     
     serializer_class = MatchParticipantSerializer
 
