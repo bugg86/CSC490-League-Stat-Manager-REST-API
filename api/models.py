@@ -256,7 +256,6 @@ class Matchparticipants(models.Model):
     summonerid = models.CharField(db_column='summonerId', max_length=100, blank=True, null=True)  # Field name made lowercase.
     assists = models.IntegerField(blank=True, null=True)
     baronkills = models.IntegerField(db_column='baronKills', blank=True, null=True)  # Field name made lowercase.
-    bountylevel = models.IntegerField(db_column='bountyLevel', blank=True, null=True)  # Field name made lowercase.
     champexperience = models.IntegerField(db_column='champExperience', blank=True, null=True)  # Field name made lowercase.
     champlevel = models.IntegerField(db_column='champLevel', blank=True, null=True)  # Field name made lowercase.
     championid = models.ForeignKey(Champions, models.DO_NOTHING, db_column='championId', blank=True, null=True)  # Field name made lowercase.
@@ -266,7 +265,6 @@ class Matchparticipants(models.Model):
     damagedealttoturrets = models.IntegerField(db_column='damageDealtToTurrets', blank=True, null=True)  # Field name made lowercase.
     damageselfmitigated = models.IntegerField(db_column='damageSelfMitigated', blank=True, null=True)  # Field name made lowercase.
     deaths = models.IntegerField(blank=True, null=True)
-    detectorwardsplaced = models.IntegerField(db_column='detectorWardsPlaced', blank=True, null=True)  # Field name made lowercase.
     doublekills = models.IntegerField(db_column='doubleKills', blank=True, null=True)  # Field name made lowercase.
     dragonkills = models.IntegerField(db_column='dragonKills', blank=True, null=True)  # Field name made lowercase.
     firstbloodassist = models.BooleanField(db_column='firstBloodAssist', blank=True, null=True)  # Field name made lowercase.
@@ -287,23 +285,13 @@ class Matchparticipants(models.Model):
     item4 = models.ForeignKey(Items, models.DO_NOTHING, db_column='item4', blank=True, null=True, related_name='item4')
     item5 = models.ForeignKey(Items, models.DO_NOTHING, db_column='item5', blank=True, null=True, related_name='item5')
     item6 = models.ForeignKey(Items, models.DO_NOTHING, db_column='item6', blank=True, null=True, related_name='item6')
-    itemspurchased = models.IntegerField(db_column='itemsPurchased', blank=True, null=True)  # Field name made lowercase.
-    killingsprees = models.IntegerField(db_column='killingSprees', blank=True, null=True)  # Field name made lowercase.
     kills = models.IntegerField(blank=True, null=True)
     lane = models.CharField(max_length=100, blank=True, null=True)
     largestcriticalstrike = models.IntegerField(db_column='largestCriticalStrike', blank=True, null=True)  # Field name made lowercase.
-    largestkillingspree = models.IntegerField(db_column='largestKillingSpree', blank=True, null=True)  # Field name made lowercase.
-    largestmultikill = models.IntegerField(db_column='largestMultiKill', blank=True, null=True)  # Field name made lowercase.
-    longesttimespentliving = models.IntegerField(db_column='longestTimeSpentLiving', blank=True, null=True)  # Field name made lowercase.
     magicdamagedealt = models.IntegerField(db_column='magicDamageDealt', blank=True, null=True)  # Field name made lowercase.
     magicdamagedealttochampions = models.IntegerField(db_column='magicDamageDealtToChampions', blank=True, null=True)  # Field name made lowercase.
     magicdamagetaken = models.IntegerField(db_column='magicDamageTaken', blank=True, null=True)  # Field name made lowercase.
     neutralminionskilled = models.IntegerField(db_column='neutralMinionsKilled', blank=True, null=True)  # Field name made lowercase.
-    nexuskills = models.IntegerField(db_column='nexusKills', blank=True, null=True)  # Field name made lowercase.
-    nexuslost = models.IntegerField(db_column='nexusLost', blank=True, null=True)  # Field name made lowercase.
-    nexustakedowns = models.IntegerField(db_column='nexusTakedowns', blank=True, null=True)  # Field name made lowercase.
-    objectivesstolen = models.IntegerField(db_column='objectivesStolen', blank=True, null=True)  # Field name made lowercase.
-    objectivesstolenassists = models.IntegerField(db_column='objectivesStolenAssists', blank=True, null=True)  # Field name made lowercase.
     participantid = models.IntegerField(db_column='participantId', blank=True, null=True)  # Field name made lowercase.
     pentakills = models.IntegerField(db_column='pentaKills', blank=True, null=True)  # Field name made lowercase.
     physicaldamagedealt = models.IntegerField(db_column='physicalDamageDealt', blank=True, null=True)  # Field name made lowercase.
@@ -323,14 +311,7 @@ class Matchparticipants(models.Model):
     rune6id = models.ForeignKey('Runes', models.DO_NOTHING, db_column='rune6Id', blank=True, null=True, related_name='rune6id')  # Field name made lowercase.
     runestyle1id = models.ForeignKey('Runestyles', models.DO_NOTHING, db_column='runeStyle1Id', blank=True, null=True, related_name='runestyle1id')  # Field name made lowercase.
     runestyle2id = models.ForeignKey('Runestyles', models.DO_NOTHING, db_column='runeStyle2Id', blank=True, null=True, related_name='runestyle2id')  # Field name made lowercase.
-    sightwardsboughtingame = models.IntegerField(db_column='sightWardsBoughtInGame', blank=True, null=True)  # Field name made lowercase.
-    spell1casts = models.IntegerField(db_column='spell1Casts', blank=True, null=True)  # Field name made lowercase.
-    spell2casts = models.IntegerField(db_column='spell2Casts', blank=True, null=True)  # Field name made lowercase.
-    spell3casts = models.IntegerField(db_column='spell3Casts', blank=True, null=True)  # Field name made lowercase.
-    spell4casts = models.IntegerField(db_column='spell4Casts', blank=True, null=True)  # Field name made lowercase.
-    summoner1casts = models.IntegerField(db_column='summoner1Casts', blank=True, null=True)  # Field name made lowercase.
     summoner1id = models.ForeignKey('Summonerspells', models.DO_NOTHING, db_column='summoner1Id', blank=True, null=True, related_name='summoner1id')  # Field name made lowercase.
-    summoner2casts = models.IntegerField(db_column='summoner2Casts', blank=True, null=True)  # Field name made lowercase.
     summoner2id = models.ForeignKey('Summonerspells', models.DO_NOTHING, db_column='summoner2Id', blank=True, null=True, related_name='summoner2id')  # Field name made lowercase.
     summonerlevel = models.IntegerField(db_column='summonerLevel', blank=True, null=True)  # Field name made lowercase.
     summonername = models.CharField(db_column='summonerName', max_length=100, blank=True, null=True)  # Field name made lowercase.
@@ -338,7 +319,6 @@ class Matchparticipants(models.Model):
     teamid = models.IntegerField(db_column='teamId', blank=True, null=True)  # Field name made lowercase.
     teamposition = models.CharField(db_column='teamPosition', max_length=100, blank=True, null=True)  # Field name made lowercase.
     timeccingothers = models.IntegerField(db_column='timeCCingOthers', blank=True, null=True)  # Field name made lowercase.
-    timeplayed = models.IntegerField(db_column='timePlayed', blank=True, null=True)  # Field name made lowercase.
     totaldamagedealt = models.IntegerField(db_column='totalDamageDealt', blank=True, null=True)  # Field name made lowercase.
     totaldamagedealttochampions = models.IntegerField(db_column='totalDamageDealtToChampions', blank=True, null=True)  # Field name made lowercase.
     totaldamageshieldedonteammates = models.IntegerField(db_column='totalDamageShieldedOnTeammates', blank=True, null=True)  # Field name made lowercase.
@@ -356,11 +336,6 @@ class Matchparticipants(models.Model):
     turretkills = models.IntegerField(db_column='turretKills', blank=True, null=True)  # Field name made lowercase.
     turrettakedowns = models.IntegerField(db_column='turretTakedowns', blank=True, null=True)  # Field name made lowercase.
     turretslost = models.IntegerField(db_column='turretsLost', blank=True, null=True)  # Field name made lowercase.
-    unrealkills = models.IntegerField(db_column='unrealKills', blank=True, null=True)  # Field name made lowercase.
-    visionscore = models.IntegerField(db_column='visionScore', blank=True, null=True)  # Field name made lowercase.
-    visionwardsboughtingame = models.IntegerField(db_column='visionWardsBoughtInGame', blank=True, null=True)  # Field name made lowercase.
-    wardskilled = models.IntegerField(db_column='wardsKilled', blank=True, null=True)  # Field name made lowercase.
-    wardsplaced = models.IntegerField(db_column='wardsPlaced', blank=True, null=True)  # Field name made lowercase.
     win = models.BooleanField(blank=True, null=True)
 
     class Meta:
