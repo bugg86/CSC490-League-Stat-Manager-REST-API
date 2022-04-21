@@ -131,37 +131,7 @@ class ChampionViewset(viewsets.ModelViewSet) :
     filter_backends = [DjangoFilterBackend]
     filterset_fields = [
         'championid', 
-        'name', 
-        'version', 
-        'title', 
-        'blurb', 
-        'info_attack', 
-        'info_defense', 
-        'info_magic', 
-        'info_difficulty', 
-        'tag1', 
-        'tag2', 
-        'partype', 
-        'stats_hp', 
-        'stats_hpperlevel', 
-        'stats_mp', 
-        'stats_mpperlevel', 
-        'stats_movespeed', 
-        'stats_armor', 
-        'stats_armorperlevel', 
-        'stats_spellblock', 
-        'stats_spellblockperlevel', 
-        'stats_attackrange', 
-        'stats_hpregen', 
-        'stats_hpregenperlevel', 
-        'stats_mpregen', 
-        'stats_mpregenperlevel', 
-        'stats_crit', 
-        'stats_critperlevel', 
-        'stats_attackdamage', 
-        'stats_attackdamageperlevel', 
-        'stats_attackspeedperlevel', 
-        'stats_attackspeed'
+        'name'
     ]
     serializer_class = ChampionSerializer
 
